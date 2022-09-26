@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDeleteElements } from '../../store/slices/elements.slice';
@@ -12,35 +13,67 @@ export default function Header({data}) {
   const selected = useSelector(state=>state.selected);
   const elements = useSelector(state=>state.elements);
 
-  const header = document.querySelector(".header");
-
-  let isClose = false
+  
+  const [changes,setChanges] = useState({
+    previus: 1,
+    actual: 1
+  });
+  let isClose = false;
 
   const change = (id)=>{
-    let index = -1;
     
-    for (let i = 0; i < header.childNodes.length; i++) {
-      index ++
-      if (id === parseInt(header.childNodes[i].id)) {
-        break 
-      };
-    };
-    console.log(index);
-    // header.scrollLeft += index * 175;
-
     if (!isClose) {
       dispatch(setSelected(id));
+
+      if (id !== changes.actual) {
+        setChanges({
+          previus: changes.actual,
+          actual: id
+        });
+      };
     };
+
     isClose = false;
   };
   
   const close = (id)=>{
     const array = elements.filter(element=>element.id !== id);
-    const newSelected = array[0] ? array[0].id : 0;
     dispatch(setDeleteElements(array));
-    dispatch(setSelected(newSelected));
+    let exists = false;
+    data.map(item=>{
+      if (item.id === changes.previus) {
+        exists = true;
+      };
+    });
+
+    if (id === selected) {
+      if (exists) {
+        dispatch(setSelected(changes.previus));
+      } else {
+        let element;
+        data.map(item=>{
+          if (item.id === id) {
+            if (data.indexOf(item)) {
+              element = data[data.indexOf(item) - 1];
+            } else {
+              element = data[data.indexOf(item) + 1];
+            };
+          };
+        });
+        dispatch(setSelected(element?.id ? element.id : 0));
+      };
+    };
     isClose = true;
   };
+
+  useEffect(()=>{
+    if (changes.actual !== selected) {
+      setChanges({
+        previus: changes.actual,
+        actual: selected
+      });
+    };
+  },[selected]);
 
   return (
     <div className='header'>

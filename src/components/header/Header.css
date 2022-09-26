@@ -10,10 +10,10 @@
   z-index: 100;
 }
 
-.header::-webkit-scrollbar{
+/* .header::-webkit-scrollbar{
   width: 0;
   height: 0;
-}
+} */
 
 .header .title{
   position: relative;
@@ -81,11 +81,15 @@
 
 .contentBx{
   width: 100%;
-  min-height: calc(100vh - 55px);
+  min-height: calc(100vh - 90px);
   background: var(--purple1);
 }
 
 @media only screen and (min-width: 450px) {
+
+  .header{
+    overflow-x: auto;
+  }
   
   .header .title{
     width: 250px;

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAgreeElements } from '../../store/slices/elements.slice';
 import { setSelected } from '../../store/slices/selected.slice';
+import { setToggleSlice } from '../../store/slices/toggle.slice';
 
 export default function Element({element}) {
 
@@ -14,6 +15,7 @@ export default function Element({element}) {
   const [active,setActive] = useState(true);
 
   const agree = (element)=>{
+
     if (!element.binder) {
       let validate = true
       elements.map(item=>{
@@ -28,6 +30,8 @@ export default function Element({element}) {
       } else {
         dispatch(setSelected(element.id));
       };
+
+      dispatch(setToggleSlice(false));
     };
   };
 

@@ -1,19 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Element from '../components/element/Element';
 import Header from '../components/header/Header';
 import Text from '../components/text/Text'
 import sections from '../jsons/sections.json';
+import { setToggleSlice } from '../store/slices/toggle.slice';
 
 function Home() {
 
+  const dispatch = useDispatch();
+
   const finish = useSelector(state=>state.finish);
   const elements = useSelector(state=>state.elements);
+  const toggleSlice = useSelector(state=>state.toggle);
 
   const [mark,setMark] = useState({
     two: false,
     trhee: false,
   });
+  const [toggle,setToggle] = useState(false);
 
   const scrollRef = useRef();
 
@@ -41,8 +46,24 @@ function Home() {
     }
   },[finish]);
 
+  useEffect(()=>{
+    setToggle(toggleSlice);
+  },[toggleSlice]);
+
   return (
     <div className={ finish.end ? 'home active' : 'home' }>
+      {
+        finish.end ? 
+        <div className='navTop'>
+          <p>Portfolio-Gerard</p>
+          <p onClick={()=>dispatch(setToggleSlice(!toggle))}>Menu {
+            toggle ?
+            <ion-icon name="close-outline"></ion-icon> :
+            <ion-icon name="menu-outline"></ion-icon>
+            }</p>
+        </div> :
+        <></>
+      }
       <div className='homeCtn' ref={scrollRef}>
         {
           finish.end ?
@@ -51,7 +72,7 @@ function Home() {
               <Header data={elements}/>
               <div className='contentBx'></div>
             </div>
-            <div className='navRight'>
+            <div className={toggle ? 'navRight active' : 'navRight'}>
               {
                 sections.map(section=>(
                   <Element key={section.id} element={section}/>

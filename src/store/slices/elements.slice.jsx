@@ -11,7 +11,7 @@ const elementsSlice = createSlice({
   ],
   reducers: {
     setAgreeElements: (state,action)=>{
-      state.push(action.payload);
+      state.unshift(action.payload);
     },
     setDeleteElements: (state,action)=>action.payload
   },
