@@ -18,17 +18,23 @@ body{
 }
 
 :root{
-  --blue1: #287bff;
+  --blue1: #0066b6;
   --blue2: #365fa1;
   --blue3: #1795ce;
-  --ligthblue1: #9ce8f7;
+  --ligthblue1: #18abbe;
   --ligthblue2: #0fbddf;
+  --ligthblue3: #61dbfb;
   --white: #fff;
   --gray: #525252;
   --black1: #222;
   --black2: #333;
   --green: #12d211;
+  --green2: #83cd29;
   --red: #ee122c;
   --yellow: #f9ca3f;
-  --orange: #ff9800;
+  --orange1: #ff9800;
+  --orange2: #da4817;
+  --purple1: #262335;
+  --purple2: #241b2f;
+  --purple3: #852468;
 }

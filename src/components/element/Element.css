@@ -1,0 +1,43 @@
+.elementBx{
+  width: 100%;
+  cursor: pointer;
+}
+
+.elementBx span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+}
+
+.title{
+  width: 100%;
+}
+
+.element, .title{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.binderBx{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.binderBx .elements{
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.binderBx .elements.active{
+  height: auto;
+}

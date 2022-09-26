@@ -1,23 +1,19 @@
 import './App.css';
 import './styles/Home.css';
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
+import './components/text/Text.css';
+import './components/header/Header.css';
+import './components/element/Element.css';
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
-import Proob from './pages/Proob';
 
 function App() {
 
   return (
-    // <HashRouter>
-    //   <Routes>
-    //     <Route path="/" element={<Home />} />
-    //   </Routes>
-    // </HashRouter>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/proob' element={<Proob />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

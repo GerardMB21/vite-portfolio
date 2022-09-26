@@ -1,0 +1,103 @@
+.header{
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--purple2);
+  overflow: hidden;
+  overflow-x: scroll;
+  z-index: 100;
+}
+
+.header::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+}
+
+.header .title{
+  position: relative;
+  width: 175px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--purple1);
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.header .title.active{
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right,var(--purple3) 0%,var(--ligthblue1) 100%) 1;
+}
+
+.header .title .name{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.header .title .name p{
+  font-size: .8em;
+}
+
+.header .title .name ion-icon{
+  font-size: 1.3em;
+}
+
+.header .title .toggle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.header .title .toggle ion-icon{
+  color: var(--white);
+}
+
+.header .title .blur{
+  display: none;
+}
+
+.header .title.active .blur{
+  display: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  background: radial-gradient(circle, transparent 25%, rgba(133,36,104,0.5) 100%);
+  backdrop-filter: blur(0px);
+  cursor: pointer;
+}
+
+.contentBx{
+  width: 100%;
+  min-height: calc(100vh - 55px);
+  background: var(--purple1);
+}
+
+@media only screen and (min-width: 450px) {
+  
+  .header .title{
+    width: 250px;
+    font-size: 1.2em;
+  }
+
+  .header .title .name{
+    gap: 10px;
+  }
+
+  .header .title .name p{
+    font-size: 1em;
+  }
+
+}
