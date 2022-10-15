@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import Content from '../components/content/Content';
 import Element from '../components/element/Element';
 import Header from '../components/header/Header';
 import Text from '../components/text/Text'
@@ -70,7 +71,9 @@ function Home() {
           <>
             <div className='mainBx'>
               <Header data={elements}/>
-              <div className='contentBx'></div>
+              <div className='contentBx'>
+                <Content />
+              </div>
             </div>
             <div className={toggle ? 'navRight active' : 'navRight'}>
               {

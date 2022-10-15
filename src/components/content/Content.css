@@ -1,0 +1,212 @@
+/* ABOUT */
+.aboutCtnt{
+  min-width: 100%;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem;
+}
+
+.aboutCtnt .header{
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  background: transparent;
+  gap: 50px;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.aboutCtnt .init, .aboutCtnt .end,
+.card{
+  width: 100%;
+  padding-left: 2rem;
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.card .imgBx{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.card .imgBx p:first-child{
+  align-self: flex-start;
+}
+
+.card .imgBx p:last-child{
+  align-self: flex-end;
+}
+
+.card .imgBx .img{
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .imgBx .img img{
+  max-width: 100%;
+  height: 100%;
+}
+
+.card .textBx .ctnt{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.card .textBx .ctnt p:nth-child(2){
+  padding-left: 2rem;
+}
+
+.card .textBx a{
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--purple5);
+  /* background-image: linear-gradient(to right,var(--purple3) 0%,var(--ligthblue1) 100%); */
+  background-image: linear-gradient(to right,var(--purple5) 0%,var(--purple5)100%);
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: left bottom;
+  transition: .5s;
+}
+
+.card .textBx a:hover{
+  background-size: 100% 2px;
+}
+
+/* COLORS TEXT */
+
+.aboutCtnt .header .import span:nth-child(3),
+.aboutCtnt .header .export span:nth-child(2),
+.aboutCtnt .init span:first-child,
+.card .imgBx p:first-child span:nth-child(3),
+.card .imgBx p:last-child span:nth-child(2){
+  color: var(--white);
+  text-shadow: 0 0 8px var(--yellow);
+}
+
+.aboutCtnt .header .import span:last-child,
+.card .imgBx p:last-child span:nth-child(5){
+  color: var(--orange1);
+}
+
+.aboutCtnt .header .export span:last-child,
+.card .imgBx p:first-child span:last-child,
+.card .imgBx p:last-child span:first-child,
+.card .imgBx p:last-child span:nth-child(4),
+.card .imgBx p:last-child span:nth-child(6){
+  color: var(--yellow2);
+}
+
+.aboutCtnt .header .export span:nth-child(3),
+.card .imgBx p:first-child span:first-child,
+.card .imgBx p:last-child span:last-child,
+.card .textBx .title h2:first-child span:first-child,
+.card .textBx .title h2:first-child span:last-child,
+.card .textBx .title h2:last-child span:first-child,
+.card .textBx .title h2:last-child span:last-child,
+.card .textBx .ctnt p:first-child span:first-child,
+.card .textBx .ctnt p:first-child span:last-child,
+.card .textBx .ctnt p:last-child span:first-child,
+.card .textBx .ctnt p:last-child span:last-child{
+  color: var(--white);
+  text-shadow: 0 0 8px var(--ligthblue2);
+}
+
+.aboutCtnt .init span:last-child,
+.aboutCtnt .end span{
+  color: var(--blue1);
+}
+
+.aboutCtnt .header .import span:first-child,
+.aboutCtnt .header .export span:first-child,
+.card .imgBx p:first-child span:nth-child(2),
+.card .textBx h2:first-child span:nth-child(2),
+.card .textBx h2:last-child span:nth-child(2),
+.card .textBx p:first-child span:nth-child(2),
+.card .textBx p:last-child span:nth-child(2){
+  color: var(--green3);
+}
+
+.aboutCtnt .header .import span:nth-child(2){
+  color: var(--purple5);
+}
+
+/* .card{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: var(--white);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+  transition: 1s;
+}
+
+.card:hover{
+  transform: translateX(50%);
+}
+
+.card .imgBx{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  background: var(--black1);
+  transition: 1s;
+  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.card:hover .imgBx{
+  transform: rotateY(-180deg);
+}
+
+.card .imgBx img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.card .imgBx img:last-child{
+  transform: rotateY(180deg);
+}
+
+.card .textBx{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--purple3);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+@media only screen and (min-width:450px) {
+  
+  .card .imgBx{
+    flex-direction: row;
+    align-items: center;
+  }
+
+}
