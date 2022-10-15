@@ -12,7 +12,7 @@ export default function Content() {
       <div className='aboutCtnt'>
         <div className='header'>
           <p className='import'><span>import</span> <span>React</span> <span>from</span> <span>'react'</span></p>
-          <p className='export'><span>export</span> <span>default function</span> <span>Content</span><span>{'() {'}</span></p>
+          <p className='export'><span>export</span> <span>default function</span> <span>About_Me</span><span>{'() {'}</span></p>
         </div>
         <div className='init'>
           <p><span>return</span> <span>{'('}</span></p>
