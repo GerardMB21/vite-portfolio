@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "html",
+    "icon": "html"
+  },
+  {
+    "id": 2,
+    "name": "css",
+    "icon": "css"
+  },
+  {
+    "id": 3,
+    "name": "javascript",
+    "icon": "javascript"
+  },
+  {
+    "id": 4,
+    "name": "react",
+    "icon": "react"
+  },
+  {
+    "id": 5,
+    "name": "nodejs",
+    "icon": "nodejs"
+  },
+  {
+    "id": 6,
+    "name": "wordpress",
+    "icon": "wordpress"
+  },
+  {
+    "id": 7,
+    "name": "python",
+    "icon": "python"
+  }
+]

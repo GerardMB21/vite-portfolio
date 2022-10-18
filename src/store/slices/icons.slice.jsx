@@ -11,7 +11,13 @@ const iconsSlice = createSlice({
       inherit: <ion-icon name="folder-outline" class='binder'></ion-icon>
     },
     json: <ion-icon name="code-working-outline" class='json'></ion-icon>,
-    html: <ion-icon name="logo-html5" class='html'></ion-icon>
+    html: <ion-icon name="logo-html5" class='html'></ion-icon>,
+    javascript: <ion-icon name="logo-javascript" class='javascript'></ion-icon>,
+    python: <ion-icon name="logo-python" class='python'></ion-icon>,
+    wordpress: <ion-icon name="logo-wordpress" class='wordpress'></ion-icon>,
+    github: <ion-icon name="logo-github" class='github'></ion-icon>,
+    linkedin: <ion-icon name="logo-linkedin" class='linkedin'></ion-icon>,
+    whatsapp: <ion-icon name="logo-whatsapp" class='whatsapp'></ion-icon>
   },
   reducers: {
   },

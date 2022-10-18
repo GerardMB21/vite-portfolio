@@ -38,7 +38,9 @@ export default function Header({data}) {
   
   const close = (id)=>{
     const array = elements.filter(element=>element.id !== id);
+    
     dispatch(setDeleteElements(array));
+    
     let exists = false;
     data.map(item=>{
       if (item.id === changes.previus) {

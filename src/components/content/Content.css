@@ -19,12 +19,12 @@
   font-size: 1.7rem;
   font-weight: 500;
   letter-spacing: 2px;
+  z-index: 1;
 }
 
 .aboutCtnt .init, .aboutCtnt .end,
 .card{
   width: 100%;
-  padding-left: 2rem;
   font-size: 1.75rem;
   letter-spacing: 2px;
   margin-bottom: 1rem;
@@ -76,15 +76,9 @@
   gap: 10px;
 }
 
-.card .textBx .ctnt p:nth-child(2){
-  padding-left: 2rem;
-}
-
 .card .textBx a{
   text-decoration: none;
   font-weight: 600;
-  color: var(--purple5);
-  /* background-image: linear-gradient(to right,var(--purple3) 0%,var(--ligthblue1) 100%); */
   background-image: linear-gradient(to right,var(--purple5) 0%,var(--purple5)100%);
   background-repeat: no-repeat;
   background-size: 0% 2px;
@@ -96,66 +90,132 @@
   background-size: 100% 2px;
 }
 
+/* SKILLS */
+
+.skillsCtnt{
+  min-width: 100%;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem;
+}
+
+.skillsCtnt .header{
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  background: transparent;
+  gap: 10px;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+.skillsCtnt .card{
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0;
+}
+
+.skillsCtnt .box{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+  0%{
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100%{
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+.skillsCtnt .box span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,#0004);
+}
+
+/* .skillsCtnt .box span img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.skillsCtnt .box span ion-icon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* COLORS TEXT */
 
-.aboutCtnt .header .import span:nth-child(3),
-.aboutCtnt .header .export span:nth-child(2),
-.aboutCtnt .init span:first-child,
-.card .imgBx p:first-child span:nth-child(3),
-.card .imgBx p:last-child span:nth-child(2){
+.ligthyellow_text{
   color: var(--white);
   text-shadow: 0 0 8px var(--yellow);
 }
 
-.aboutCtnt .header .import span:last-child,
-.card .imgBx p:last-child span:nth-child(5){
+.orange_text{
   color: var(--orange1);
 }
 
-.aboutCtnt .header .export span:last-child,
-.card .imgBx p:first-child span:last-child,
-.card .imgBx p:last-child span:first-child,
-.card .imgBx p:last-child span:nth-child(4),
-.card .imgBx p:last-child span:nth-child(6){
+.yellow_text{
   color: var(--yellow2);
 }
 
-.aboutCtnt .header .export span:nth-child(3),
-.card .imgBx p:first-child span:first-child,
-.card .imgBx p:last-child span:last-child,
-.card .textBx .title h2:first-child span:first-child,
-.card .textBx .title h2:first-child span:last-child,
-.card .textBx .title h2:last-child span:first-child,
-.card .textBx .title h2:last-child span:last-child,
-.card .textBx .ctnt p:first-child span:first-child,
-.card .textBx .ctnt p:first-child span:last-child,
-.card .textBx .ctnt p:last-child span:first-child,
-.card .textBx .ctnt p:last-child span:last-child{
+.ligthblue_text{
   color: var(--white);
   text-shadow: 0 0 8px var(--ligthblue2);
 }
 
-.aboutCtnt .init span:last-child,
-.aboutCtnt .end span{
+
+.blue_text{
   color: var(--blue1);
 }
 
-.aboutCtnt .header .import span:first-child,
-.aboutCtnt .header .export span:first-child,
-.card .imgBx p:first-child span:nth-child(2),
-.card .textBx h2:first-child span:nth-child(2),
-.card .textBx h2:last-child span:nth-child(2),
-.card .textBx p:first-child span:nth-child(2),
-.card .textBx p:last-child span:nth-child(2){
+.green_text{
   color: var(--green3);
 }
 
-.aboutCtnt .header .import span:nth-child(2){
+.purple_text{
   color: var(--purple5);
+}
+
+/* PADDINGS */
+
+.left_2_rem{
+  padding-left: 2rem;
+}
+
+.left_4_rem{
+  padding-left: 4rem;
 }
 
 @media only screen and (min-width:450px) {
   
+  /* ABOUT */
+
   .card .imgBx{
     flex-direction: row;
     align-items: center;

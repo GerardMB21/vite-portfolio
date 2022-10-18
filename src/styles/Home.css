@@ -125,6 +125,18 @@ ion-icon.html{
   color: var(--orange2);
 }
 
+ion-icon.javascript{
+  color: var(--yellow);
+}
+
+ion-icon.wordpress{
+  color: var(--blue3);
+}
+
+ion-icon.python{
+  color: var(--ligthblue1);
+}
+
 @media only screen and (min-width:450px) {
   
   .home{
